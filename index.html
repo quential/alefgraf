@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <title>Типография АЛЕФ</title>
+    <!-- Meta-tags: main-->
+    <meta charset="UTF-8">
+
+    <title></title>
+    <meta name="description" content="{{ meta.description|striptags }}">
+    <meta name="robots" content="{{ meta.robots }}">
+
+    <!-- Meta-mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Meta optimize-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="content-type" content="on">
+    <!-- Styles-->
+    <link rel="stylesheet" href="css/libs/b_grid.css">
+    <link rel="stylesheet" href="css/libs/flickity.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <!-- Logo ==================================================-->
+            <div class="header__logo"><a href="index.html"><img src="img/logo.png" alt="Типография Алеф"></a></div>
+            <!-- ==================================================-->
+          </div>
+          <div class="col-md-2 col-md-push-8 col-sm-6 col-sm-push-0 col-xs-6 col-xs-push-0">
+            <!-- Phone number ==================================================-->
+            <div class="header__phone"><i class="icon--phone"></i><a href="tel:+79882935690"><span>93-56-90</span></a></div>
+            <!-- ==================================================-->
+          </div>
+          <div class="col-md-8 col-md-pull-2 col-sm-12 col-sm-pull-0 col-xs-12 col-xs-pull-0">
+            <!-- Main menu ==================================================-->
+<!--            <div class="header__menu">-->
+<!--                <ul>-->
+<!--                -->
+<!--                  <li><a href="{{ "isbn"|link }}">Идентификатор ISBN</a></li>-->
+<!--                  <li><a href="{{ "publish"|link }}">Как издать книгу</a></li>-->
+<!--                  <li><a href="{{ "calc"|link }}">Калькулятор</a></li>-->
+<!--                  <li><a href="{{ "clients"|link }}">Клиентам</a></li>-->
+<!--                  <li><a href="{{ "works"|link }}">Портфолио</a></li>-->
+<!--                  <li><a href="{{ "contacts"|link }}">Контакты</a></li>-->
+
+<!--                </ul>-->
+<!--            </div>-->
+            <!-- ==================================================-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="inner-header">
+      <div class="container">
+        <h1>Онлайн-калькулятор</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="page-info">
+        Для расчета стоимости издания Вашей книги
+        заполните поля в форме ниже, укажите
+        необходимые параметры и услуги и нажмите кнопку
+        “Рассчитать”. Обратите внимание, что точная
+        стоимость издания, а также дополнительная
+        информация, не предусмотренная в калькуляторе,
+        обсуждаются непосредственно с менеджером.
+        <br>
+        <br>
+        <strong>
+          Данный рассчет актуален для книги формата А5 (60х84 1/16) 21х15см.
+          <br>
+          Расчет стоимости для других форматов на сайте не предусмотрен и осуществляется менеджером.
+        </strong>
+      </p>
+    </div>
+
+    <div class="container">
+      <form id="calculator" action="" name="calculator" class="calc-form">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="calc-label">Тираж книги</div>
+                <label for="tiraj"></label><input type="number" id="tiraj" required min="1" value=""><span class="calc-label--min">&nbsp;&nbsp;&nbsp;1 стр. ~ р.</span>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="row">
+
+                  <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="calc-label calc-label--offset">Страниц</div>
+                    <label for="pagesamount"></label><input id="pagesamount" type="number" name="pagesamount" required min="10" value="">
+                  </div>
+
+                  <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="calc-label calc-label--offset">Цветных</div>
+                    <label for="pagesamount_colored"></label><input min="0" id="pagesamount_colored" type="number" name="pagesamount_colored" required value="">
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="calc-label calc-label--offset">Тип печати</div>
+                    <select title="Укажите количество цветных страниц" disabled class="no-margin" id="color-page-print-type" name="color-page-print-type">
+                      <option selected value="5.2">Офсетная / струйная</option>
+                      <option value="7.8">Лазерная</option>
+                    </select>
+                  </div>
+                  
+                </div>
+
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-label calc-label--offset">Тип обложки</div>
+                <label for="covertype"></label><select id="covertype" name="covertype">
+                  <option selected value="simple">Простая</option>
+                  <option value="glance">Глянец</option>
+                  <option value="solid">Твердая</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-label calc-label--offset">Переплет</div>
+                <label for="sidetype"></label><select id="sidetype" name="sidetype">
+                  <option selected value="13">Скобы</option>
+                  <option value="26">Термоклей</option>
+                  <option value="knit">Прошивка</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="calc-label">Дополнительно</div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-check">
+                  <input id="coverdesign" type="checkbox" name="colorpages">
+                  <label for="coverdesign"></label><span>Дизайн обложки (от 700 р.)</span>
+                </div>
+                <div class="calc-check">
+                  <input id="isbn" type="checkbox" name="colorpages">
+                  <label for="isbn"></label>
+                  <span>
+                    <abbr title="Международный стандартный книжный номер">ISBN</abbr> (3200 р.)
+                  </span>
+                </div>
+                <div class="calc-check">
+                  <input id="udkbbk" type="checkbox" name="colorpages">
+                  <label for="udkbbk"></label>
+                  <span>
+                    <abbr title="Универсальная десятичная классификация">УДК</abbr>,
+                    <abbr title="Библиотечно-библиографическая классификация">ББК</abbr>
+                    (340 р.)
+                  </span>
+                </div>
+                <div class="calc-check">
+                  <input id="sending" type="checkbox" name="colorpages">
+                  <label for="sending"></label><span>Рассылка (600 р.)</span>
+                </div>
+                <div class="calc-check">
+                  <input id="rinc" type="checkbox" name="rinc">
+                  <label for="rinc"></label><span>Размещение в <abbr title="Научная электронная библиотека">Elibrary</abbr> (900 р.)</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-check">
+                  <input id="markup" type="checkbox" name="colorpages">
+                  <label for="markup"></label><span>Верстка макета (20 р. стр.)</span>
+                </div>
+                <div class="calc-check">
+                  <input id="correct" type="checkbox" name="colorpages">
+                  <label for="correct"></label><span>Корректура (56 р.стр.)</span>
+                </div>
+                <div class="calc-check">
+<!--                  <input id="typing" type="checkbox" name="colorpages">-->
+<!--                  <label for="typing"></label><span>Набор текста (5 р. стр)</span>-->
+<!--                </div>-->
+                <!-- <div class="calc-check">
+                  <input id="tis" type="checkbox" name="colorpages">
+                  <label for="tis"></label><span>Форма для тиснения (3000 р.)</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="calc-count-button">рассчитать</div>
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+            <div class="calc-price"><span>Стоимость издания Вашей книги:</span><span id="bookPrice"></span></div>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container">
+      <h3>Как осуществляется расчет стоимости?</h3>
+      <p>
+        Для расчета стоимости книги вам необходимо:<br>
+        1. Определить тираж будущего издания.<br>
+        2. Умножить количество страниц на соответствующий коэффициент.<br>
+        3. Определить тип обложки и переплета.<br>
+        4. Сложить стоимость внутреннего блока книги и обложки.<br>
+        5. Умножить стоимость книги на количество экземпляров и прибавить стоимость дополнительных услуг.<br>
+        <br>
+        Для постоянных клиентов действует система накопительных скидок до 10%.
+      
+      </p>
+    </div>
+
+    <div class="map">
+      <div id="mainMap" class="map__layer"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-8 col-sm-6 col-sm-6 col-xs-10 col-xs-offset-1">
+            <div class="map__contact-form">
+              <h3>Наш адрес</h3>
+              <div class="address">
+                г. Махачкала,<br>
+                Сулеймана Стальского 50, 3 этаж
+                
+              </div>
+              <div class="phone1">
+                        <div class="phone"><i class="icon--phone"></i><a class="phone_color" href="tel:+79882000164"><span>+7 (988) 2000-164</span></a></div>
+                        <div class="phone"><i class="icon--phone"></i><a class="phone_color" href="tel:+79034775564"><span>+7 (903) 477-55-64</span></a></div>
+                        <div class="phone"><i class="icon--phone"></i><a class="phone_color" href="tel:+79282648864"><span>+7 (928) 264-88-64</span></a></div>
+                        <div class="phone"><i class="icon--phone"></i><a class="phone_color" href="tel:+79882935690"><span>93-56-90</span></a></div>
+              </div>
+              <div class="email"><span>E-Mail: </span><a href="mailto:alefgraf@mail.ru" class="mail_color">alefgraf@mail.ru</a></div>
+              <div class="callback"><span>Вы можете отправить сообщение нажав на кнопку ниже и наш менеджер свяжется с Вами</span>
+                <form action="https://wa.me/" id="callbackMainPage" method="get">
+                  <input type="hidden" name="phone" value="79882935690">
+                  <input type="hidden" name="text" value="Здравствуйте, свяжитесь со мной пожалуйста">
+                  <button class="button_style" type="submit">Отправить в WhatsApp</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="copyright">(с) Типография Алеф — 2025</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_KiE7iRWdGplFjjVJ41SmS9CSeXCFkVQ&amp;sensor=true"></script>
+
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/underscore-min.js"></script>
+    <script src="js/libs/flickity.pkgd.min.js"></script>
+    <script src="js/libs/smoothscroll.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+
+
+</html>

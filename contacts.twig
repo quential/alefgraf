@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  {% include 'head.twig' %}
+
+  <body>
+    {% include 'header.twig' %}
+
+    <div class="inner-header">
+      <div class="container">
+        <h1>{{ meta.title }}</h1>
+      </div>
+    </div>
+	
+  	<div class="container">
+  	    {{ content }}
+  	</div>
+
+    <div class="map">
+      <div id="mainMap" class="map__layer"></div>
+    </div>
+
+  	{% include 'footer.twig' %}
+  
+    {% include 'scripts.twig' %}
+  </body>
+</html>

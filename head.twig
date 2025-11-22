@@ -1,0 +1,23 @@
+  <head>
+    <title>Типография АЛЕФ</title>
+    <!-- Meta-tags: main-->
+    <meta charset="UTF-8">
+
+    <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}">
+    {% endif %}{% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+
+    <!-- Meta-mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Meta optimize-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <!-- Styles-->
+    <link rel="stylesheet" href="{{ theme_url }}/css/libs/b_grid.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/libs/flickity.min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/main.css">
+  </head>

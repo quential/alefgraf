@@ -1,0 +1,31 @@
+<div class="map">
+  <div id="mainMap" class="map__layer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-8 col-sm-6 col-sm-6 col-xs-10 col-xs-offset-1">
+        <div class="map__contact-form">
+          <h3>Наш адрес</h3>
+          <div class="address">
+            г. Махачкала,<br>
+            Сулеймана Стальского 50, 3 этаж
+            
+          </div>
+                    <div class="phone"><i class="icon--phone"></i><span>+7 (988) 2000-164</span></div>
+                    <div class="phone"><i class="icon--phone"></i><span>+7 (903) 477-55-64</span></div>
+                    <div class="phone"><i class="icon--phone"></i><span>+7 (928) 978-55-64</span></div>
+                    <div class="phone"><i class="icon--phone"></i><span>93-56-90</span></div>
+          <div class="email"><span>E-Mail: </span>alefgraf@mail.ru</div>
+          <div class="callback"><span>Вы можете оставить свой номер телефона и наш менеджер свяжется с Вами</span>
+            <form action="sentRequest.php" id="callbackMainPage" method="POST">
+              <input type="phone" name="phoneNumber" placeholder="+7 (___) ___ - __ - __">
+              <small class="phone-note">
+                Отправляя заявку на обратный звонок, вы подтверждаете свое согласие на сбор, хранение и использование моего номера телефона в соответствии с ФЗ «О персональных данных» от 27.07.2006 № 152-ФЗ.
+              </small>
+              <input type="submit" name="phoneSubmit" value="Отправить">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  {% include 'head.twig' %}
+
+  <body>
+    <!-- Header ==================================================-->
+    {% include 'header.twig' %}
+
+    <!-- ==================================================-->
+    <div class="inner-header">
+      <div class="container">
+        <h1>Онлайн-калькулятор</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="page-info">
+        Для расчета стоимости издания Вашей книги
+        заполните поля в форме ниже, укажите
+        необходимые параметры и услуги и нажмите кнопку
+        “Рассчитать”. Обратите внимание, что точная
+        стоимость издания, а также дополнительная
+        информация, не предусмотренная в калькуляторе,
+        обсуждаются непосредственно с менеджером.
+        <br>
+        <br>
+        <strong>
+          Данный расчет актуален для книги формата А5 (60х84 1/16) 21х15см.
+          <br>
+          Расчет стоимости для других форматов на сайте не предусмотрен и осуществляется менеджером.
+        </strong>
+      </p>
+    </div>
+
+    <div class="container">
+      <form id="calculator" action="" name="calculator" class="calc-form">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="calc-label">Тираж книги</div>
+                <input type="number" id="tiraj" required min="1" value="0"><span class="calc-label--min">&nbsp;&nbsp;&nbsp;1 стр. - 0.8 р.</span>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="row">
+
+                  <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="calc-label calc-label--offset">Страниц</div>
+                    <input id="pagesamount" type="number" name="pagesamount" required min="10" value="0">
+                  </div>
+
+                  <div class="col-xs-6 col-sm-3 col-md-3">
+                    <div class="calc-label calc-label--offset">Цветных</div>
+                    <input min="0" id="pagesamount_colored" type="number" name="pagesamount_colored" required value="0">
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="calc-label calc-label--offset">Тип печати</div>
+                    <select title="Укажите количество цветных страниц" disabled class="no-margin" id="color-page-print-type" name="color-page-print-type">
+                      <option selected value="stream">Офсетная / струйная</option>
+                      <option value="lazer">Лазерная</option>
+                    </select>
+                  </div>
+                  
+                </div>
+
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-label calc-label--offset">Тип обложки</div>
+                <select id="covertype" name="covertype">
+                  <option selected value="simple">Простая</option>
+                  <option value="glance">Глянец</option>
+                  <option value="solid">Твердая</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-label calc-label--offset">Переплет</div>
+                <select id="sidetype" name="sidetype">
+                  <option selected value="5">Скобы — 5 р.</option>
+                  <option value="10">Термоклей — 10 р.</option>
+                  <option value="knit">Прошивка — 0.2р за стр.</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="calc-label">Дополнительно</div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-check">
+                  <input id="coverdesign" type="checkbox" name="colorpages">
+                  <label for="coverdesign"></label><span>Дизайн обложки (от 500 р.)</span>
+                </div>
+                <div class="calc-check">
+                  <input id="isbn" type="checkbox" name="colorpages">
+                  <label for="isbn"></label>
+                  <span>
+                    <abbr title="Международный стандартный книжный номер">ISBN</abbr> (2500 р.)
+                  </span>
+                </div>
+                <div class="calc-check">
+                  <input id="udkbbk" type="checkbox" name="colorpages">
+                  <label for="udkbbk"></label>
+                  <span>
+                    <abbr title="Универсальная десятичная классификация">УДК</abbr>,
+                    <abbr title="Библиотечно-библиографическая классификация">ББК</abbr>
+                    (200 р.)
+                  </span>
+                </div>
+                <div class="calc-check">
+                  <input id="sending" type="checkbox" name="colorpages">
+                  <label for="sending"></label><span>Рассылка (500 р.)</span>
+                </div>
+                <div class="calc-check">
+                  <input id="rinc" type="checkbox" name="rinc">
+                  <label for="rinc"></label><span>Размещение в <abbr title="Российский индекс научного цитирования">РИНЦ</abbr> (от 400 р.)</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-check">
+                  <input id="markup" type="checkbox" name="colorpages">
+                  <label for="markup"></label><span>Верстка макета (от 5 р. стр.)</span>
+                </div>
+                <div class="calc-check">
+                  <input id="correct" type="checkbox" name="colorpages">
+                  <label for="correct"></label><span>Корректура (от 30 р. стр.)</span>
+                </div>
+                <div class="calc-check">
+                  <input id="typing" type="checkbox" name="colorpages">
+                  <label for="typing"></label><span>Распечатка (1.5 р. стр)</span>
+                </div>
+                <!-- <div class="calc-check">
+                  <input id="tis" type="checkbox" name="colorpages">
+                  <label for="tis"></label><span>Форма для тиснения (3000 р.)</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="calc-count-button">рассчитать</div>
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+            <div class="calc-price" style="opacity: 0"><span>Стоимость издания Вашей книги:</span><span id="bookPrice"></span></div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container">
+      <h3>Как осуществляется расчет стоимости?</h3>
+      <p>
+        Для расчета стоимости книги вам необходимо:<br>
+        1. Определить тираж будущего издания.<br>
+        2. Умножить количество страниц на соответствующий коэффициент.<br>
+        3. Определить тип обложки и переплета.<br>
+        4. Сложить стоимость внутреннего блока книги и обложки.<br>
+        5. Умножить стоимость книги на количество экземпляров и прибавить стоимость дополнительных услуг.<br>
+        <br>
+        <strong>
+          Данный расчет актуален для книги формата А5 (60х84 1/16) 21х15см. Расчет стоимости для других форматов на сайте не предусмотрен и осуществляется менеджером.
+        </strong>
+        <br>
+        <br>
+        Для постоянных клиентов действует система накопительных скидок до 10%.
+        
+      </p>
+    </div>
+
+    {% include 'map.twig' %}
+    {% include 'footer.twig' %}
+
+    {% include 'scripts.twig' %}
+  </body>
+</html>
